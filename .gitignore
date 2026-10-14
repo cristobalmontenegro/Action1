@@ -1,0 +1,28 @@
+# --- Logs y salidas de ejecución ---
+*.log
+
+# --- Temporales ---
+*.tmp
+*.temp
+*.bak
+*.old
+
+# --- Sistema operativo ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# --- Editores ---
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Credenciales / secretos (NUNCA subir) ---
+*.pfx
+*.pvk
+*.key
+*.pem
+secrets.json
