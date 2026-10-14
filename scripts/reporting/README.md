@@ -1,6 +1,8 @@
-# Reporting
+# 📊 Reporting
 
 [Español abajo](#reportes)
+
+**🇬🇧 English**
 
 Category-level index for the **reporting** scripts. Each script in this folder writes a **custom Action1 attribute** that you can use to filter, group and alert in the Action1 console — no scheduled jobs, no impact on end users.
 
@@ -10,7 +12,9 @@ Category-level index for the **reporting** scripts. Each script in this folder w
 
 ---
 
-# Reportes
+# 📊 Reportes
+
+**🇪🇸 Español**
 
 Índice de la categoría **reporting**. Cada script de esta carpeta escribe un **atributo personalizado de Action1** que se puede usar para filtrar, agrupar y alertar en la consola de Action1 — sin trabajos programados, sin impacto en los usuarios.
 

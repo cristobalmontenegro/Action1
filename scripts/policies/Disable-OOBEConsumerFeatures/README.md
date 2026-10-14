@@ -1,6 +1,8 @@
-# Disable OOBE (SCOOBE) and Consumer Features
+# 🔕 Disable OOBE (SCOOBE) and Consumer Features
 
 [Español abajo](#desactivar-oobe-scoobe-y-sugerencias-al-consumidor)
+
+**🇬🇧 English**
 
 Disables the **OOBE/SCOOBE** "Finish setting up" screen and Microsoft consumer content suggestions, both machine-wide and in the **default user profile** so they apply to new accounts.
 
@@ -91,7 +93,9 @@ None. The registry paths, DWORD values and the six `SubscribedContent-*` ids are
 
 ---
 
-# Desactivar OOBE (SCOOBE) y Sugerencias al Consumidor
+# 🔕 Desactivar OOBE (SCOOBE) y Sugerencias al Consumidor
+
+**🇪🇸 Español**
 
 Desactiva la pantalla **OOBE/SCOOBE** ("Terminar de configurar") y las sugerencias de contenido de Microsoft, tanto a nivel de máquina como en el **perfil por defecto** para que apliquen a los usuarios nuevos.
 

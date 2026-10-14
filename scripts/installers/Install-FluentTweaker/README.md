@@ -1,6 +1,8 @@
-# Install FluentTweaker from the Latest GitHub Release
+# 🛠️ Install FluentTweaker from the Latest GitHub Release
 
 [Español abajo](#instalación-de-fluenttweaker-desde-github)
+
+**🇬🇧 English**
 
 Downloads and installs the **latest release** of **FluentTweaker** straight from the GitHub releases API, fixes NTFS permissions, and drops a shortcut on the Public Desktop.
 
@@ -73,7 +75,9 @@ No parameters. The script is driven by variables declared at the top of the file
 
 ---
 
-# Instalación de FluentTweaker desde GitHub
+# 🛠 Instalación de FluentTweaker desde GitHub
+
+**🇪🇸 Español**
 
 Descarga e instala la **última versión** de **FluentTweaker** directamente desde la API de releases de GitHub, corrige los permisos NTFS y crea un acceso directo en el Escritorio Público.
 

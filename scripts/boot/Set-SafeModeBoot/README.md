@@ -1,6 +1,8 @@
-# Safe Mode Boot with Networking
+# 🛟 Safe Mode Boot with Networking
 
 [Español abajo](#arranque-en-modo-seguro-con-red)
+
+**🇬🇧 English**
 
 Configures the machine to boot into **Safe Mode with networking** and reboots immediately. Meant for diagnostics and malware-remediation tasks that require a minimal Windows environment.
 
@@ -65,7 +67,9 @@ None. The Safe Mode flavour (`network`) is hardcoded; change it to `minimal` or 
 
 ---
 
-# Arranque en Modo Seguro con Red
+# 🛟 Arranque en Modo Seguro con Red
+
+**🇪🇸 Español**
 
 Configura el equipo para arrancar en **Modo Seguro con funciones de red** y reinicia de inmediato. Pensado para tareas de diagnóstico y desinfección que requieren un entorno mínimo de Windows.
 

@@ -1,6 +1,8 @@
-# Low Disk Space (Custom Attribute)
+# 💾 Low Disk Space (Custom Attribute)
 
 [Español abajo](#atributo-personalizado-de-disco-con-poco-espacio)
+
+**🇬🇧 English**
 
 Measures the free-space percentage of drive `C:` and publishes the custom attribute **`LowDisk`** with value `1` (low) or `0` (ok) in Action1.
 
@@ -66,7 +68,9 @@ Tune `$ThresholdPercent` to match the criterion used by your Action1 report.
 
 ---
 
-# Atributo Personalizado de Disco con Poco Espacio
+# 💾 Atributo Personalizado de Disco con Poco Espacio
+
+**🇪🇸 Español**
 
 [English above](#low-disk-space-custom-attribute)
 

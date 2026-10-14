@@ -1,6 +1,8 @@
-# Deep Cleanup
+# 🧽 Deep Cleanup
 
 [Español abajo](#limpieza-profunda)
+
+**🇬🇧 English**
 
 Configurable, aggressive cleanup: age-filtered temp files, Windows Error Reporting, shader caches, broken shortcuts, the Recycle Bin and a **deferred DISM run via a scheduled task**.
 
@@ -93,7 +95,9 @@ Example invocation in Action1:
 
 ---
 
-# Limpieza Profunda
+# 🧽 Limpieza Profunda
+
+**🇪🇸 Español**
 
 Limpieza agresiva y parametrizable: temporales con filtro de antigüedad, WER, cachés de shaders, accesos directos rotos, papelera de reciclaje y **DISM diferido mediante tarea programada**.
 

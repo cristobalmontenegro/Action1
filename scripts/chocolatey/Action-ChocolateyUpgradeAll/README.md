@@ -1,6 +1,8 @@
-# Chocolatey Upgrade All
+# 🍫 Chocolatey Upgrade All
 
 [Español abajo](#actualizar-todo-el-software-con-chocolatey)
+
+**🇬🇧 English**
 
 Upgrades **every** Chocolatey-managed package on the machine with a single silent command (`choco upgrade all -y`). Made for scheduled maintenance.
 
@@ -64,7 +66,9 @@ None. The fallback path (`%ProgramData%\chocolatey\bin\choco.exe`) is hardcoded 
 
 ---
 
-# Actualizar Todo el Software con Chocolatey
+# 🍫 Actualizar Todo el Software con Chocolatey
+
+**🇪🇸 Español**
 
 [English above](#chocolatey-upgrade-all)
 

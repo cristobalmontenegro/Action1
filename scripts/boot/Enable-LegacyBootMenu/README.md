@@ -1,6 +1,8 @@
-# Enable Legacy Boot Menu (F8)
+# ⌨️ Enable Legacy Boot Menu (F8)
 
 [Español abajo](#reactivar-el-menú-de-arranque-clásico)
+
+**🇬🇧 English**
 
 Re-enables the classic Windows **boot menu** so you can press **F8** (Advanced Boot Options) while the machine starts. Meant for on-site support and recovery tasks.
 
@@ -63,7 +65,9 @@ None. The policy value (`legacy`) is hardcoded; change it to `standard` in the s
 
 ---
 
-# Reactivar el Menú de Arranque Clásico
+# ⌨ Reactivar el Menú de Arranque Clásico
+
+**🇪🇸 Español**
 
 [English above](#enable-legacy-boot-menu-f8)
 

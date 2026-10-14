@@ -1,5 +1,7 @@
 # 🖥️ Action1 Scripts
 
+**🇬🇧 English**
+
 A curated collection of **PowerShell** scripts for endpoint automation, maintenance and management with [Action1](https://www.action1.com/) on Windows fleets. Every script ships with its own **bilingual README** (English / Spanish) documenting what it does, its parameters, its exit codes and its risks before you run it.
 
 **14 scripts · 6 categories** — hand-written for real-world IT operations: cleanup, system repair, software deployment, Windows policies, boot control and custom-attribute reporting.
@@ -170,9 +172,11 @@ This project is licensed under the MIT License — see the [`LICENSE`](./LICENSE
 
 ---
 
-# Versión en Español (ES)
+# 🇪🇸 Versión en Español
 
 # 🖥️ Action1 Scripts
+
+**🇪🇸 Español**
 
 Una colección curada de scripts **PowerShell** para automatización, mantenimiento y gestión de endpoints con [Action1](https://www.action1.com/) en flotas Windows. Cada script incluye su propio **README bilingüe** (inglés / español) que documenta qué hace, sus parámetros, sus códigos de salida y sus riesgos antes de ejecutarlo.
 

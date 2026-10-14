@@ -1,6 +1,8 @@
-# Update FirmaEC
+# ✍️ Update FirmaEC
 
 [Español abajo](#actualizar-firmaec)
+
+**🇬🇧 English**
 
 Detects whether **FirmaEC** is installed and runs its official updater (`--update`) when it is; if it is not installed, it does nothing.
 
@@ -66,7 +68,9 @@ None. The paths are hardcoded for a standard FirmaEC installation; the script re
 
 ---
 
-# Actualizar FirmaEC
+# ✍ Actualizar FirmaEC
+
+**🇪🇸 Español**
 
 [English above](#update-firmaec)
 

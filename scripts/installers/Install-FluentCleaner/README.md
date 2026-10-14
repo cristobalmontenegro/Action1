@@ -1,6 +1,8 @@
-# Machine-Wide Install of FluentCleaner with WinGet
+# 🧹 Machine-Wide Install of FluentCleaner with WinGet
 
 [Español abajo](#instalación-de-fluentcleaner-con-winget)
+
+**🇬🇧 English**
 
 Installs or updates **FluentCleaner** (`Builtbybel.FluentCleaner`) machine-wide with **WinGet**, repairs NTFS permissions so regular users can run it, and drops a shortcut on the Public Desktop.
 
@@ -74,7 +76,9 @@ No parameters. The script is driven by variables declared at the top of the file
 
 ---
 
-# Instalación de FluentCleaner con WinGet
+# 🧹 Instalación de FluentCleaner con WinGet
+
+**🇪🇸 Español**
 
 Instala o actualiza **FluentCleaner** (`Builtbybel.FluentCleaner`) de forma global con **WinGet**, repara los permisos NTFS para que cualquier usuario pueda ejecutarlo y crea un acceso directo en el Escritorio Público.
 

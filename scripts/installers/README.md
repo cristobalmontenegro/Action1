@@ -1,6 +1,8 @@
-# Installers
+# 📦 Installers
 
 [Español abajo](#instaladores)
+
+**🇬🇧 English**
 
 Category-level index for the **installers** scripts. They install or update specific third-party applications on a managed Windows machine. All three target a real-world need we keep hitting when provisioning endpoints: cleaning utilities, system tweaks and the Ecuadorian e-signature client.
 
@@ -12,7 +14,9 @@ Category-level index for the **installers** scripts. They install or update spec
 
 ---
 
-# Instaladores
+# 📦 Instaladores
+
+**🇪🇸 Español**
 
 Índice de la categoría **installers**. Instalan o actualizan aplicaciones concretas de terceros en un equipo Windows gestionado. Los tres atacan una necesidad real al aprovisionar endpoints: utilidades de limpieza, ajustes del sistema y el firmador electrónico de Ecuador.
 

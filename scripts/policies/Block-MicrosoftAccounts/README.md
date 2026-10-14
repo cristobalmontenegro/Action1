@@ -1,6 +1,8 @@
-# Block Microsoft Accounts and OneDrive
+# 🚫 Block Microsoft Accounts and OneDrive
 
 [Español abajo](#bloquear-cuentas-microsoft-y-onedrive)
+
+**🇬🇧 English**
 
 Blocks the use of **Microsoft accounts** (Hotmail/Outlook/Live) and disables **OneDrive** file sync machine-wide through registry-based policies.
 
@@ -83,7 +85,9 @@ None. The registry paths and values are hardcoded in the script.
 
 ---
 
-# Bloquear Cuentas Microsoft y OneDrive
+# 🚫 Bloquear Cuentas Microsoft y OneDrive
+
+**🇪🇸 Español**
 
 Bloquea el uso de **cuentas Microsoft** (Hotmail/Outlook/Live) y desactiva la sincronización de **OneDrive** a nivel de máquina mediante directivas de registro.
 

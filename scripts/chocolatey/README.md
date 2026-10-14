@@ -1,6 +1,8 @@
-# Chocolatey
+# 🍫 Chocolatey
 
 [Español abajo](#chocolatey-1)
+
+**🇬🇧 English**
 
 Category-level index for the **Chocolatey** scripts. One keeps Chocolatey-managed software up to date, the other reports whether Chocolatey itself is installed. Together they let you manage Chocolatey as a "software that manages software" stack from Action1.
 
@@ -11,7 +13,9 @@ Category-level index for the **Chocolatey** scripts. One keeps Chocolatey-manage
 
 ---
 
-# Chocolatey
+# 🍫 Chocolatey
+
+**🇪🇸 Español**
 
 Índice de la categoría **Chocolatey**. Uno mantiene el software gestionado por Chocolatey actualizado, el otro reporta si Chocolatey está instalado. Juntos permiten manejar Chocolatey como un "software que gestiona software" desde Action1.
 

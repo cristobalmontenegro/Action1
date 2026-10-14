@@ -1,6 +1,8 @@
-# System Health Check and Repair
+# 🏥 System Health Check and Repair
 
 [Español abajo](#verificación-y-reparación-del-sistema)
+
+**🇬🇧 English**
 
 Full system repair: **CHKDSK + DISM `/RestoreHealth` + SFC `/scannow`**, followed by an automatic reboot.
 
@@ -68,7 +70,9 @@ None.
 
 ---
 
-# Verificación y Reparación del Sistema
+# 🏥 Verificación y Reparación del Sistema
+
+**🇪🇸 Español**
 
 Reparación integral: **CHKDSK + DISM `/RestoreHealth` + SFC `/scannow`**, seguida de un reinicio automático.
 

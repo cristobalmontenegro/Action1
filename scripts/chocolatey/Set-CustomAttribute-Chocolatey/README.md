@@ -1,6 +1,8 @@
-# Chocolatey Installed (Custom Attribute)
+# 🍫 Chocolatey Installed (Custom Attribute)
 
 [Español abajo](#atributo-personalizado-chocolatey-instalado)
+
+**🇬🇧 English**
 
 Checks whether Chocolatey is installed and publishes the custom attribute **`Chocolatey`** with value `1` (yes) or `0` (no) in Action1.
 
@@ -66,7 +68,9 @@ Edit `$AttributeName` in the script if you want to publish under a different att
 
 ---
 
-# Atributo Personalizado Chocolatey Instalado
+# 🍫 Atributo Personalizado Chocolatey Instalado
+
+**🇪🇸 Español**
 
 [English above](#chocolatey-installed-custom-attribute)
 

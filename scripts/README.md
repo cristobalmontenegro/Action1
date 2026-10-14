@@ -1,6 +1,8 @@
-# Scripts
+# 🛠️ Scripts
 
 [Español abajo](#scripts-1)
+
+**🇬🇧 English**
 
 Index of every script in this repository, organised by category. Each category has its own bilingual README with the table of scripts in that group; every individual script has its own detailed README with the "how to use" steps.
 
@@ -54,7 +56,9 @@ scripts/
 
 ---
 
-# Scripts
+# 🛠 Scripts
+
+**🇪🇸 Español**
 
 Índice de todos los scripts del repositorio, organizados por categoría. Cada categoría tiene su propio README bilingüe con la tabla de los scripts del grupo; cada script individual tiene su README detallado con los pasos de uso.
 

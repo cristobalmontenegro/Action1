@@ -1,6 +1,8 @@
-# Policies
+# 🛡️ Policies
 
 [Español abajo](#políticas)
+
+**🇬🇧 English**
 
 Category-level index for the **policies** scripts. They apply **machine-level registry policies** under `HKLM` (and, where relevant, the default user profile) to harden the endpoint. Both are **idempotent** and safe to re-run.
 
@@ -11,7 +13,9 @@ Category-level index for the **policies** scripts. They apply **machine-level re
 
 ---
 
-# Políticas
+# 🛡 Políticas
+
+**🇪🇸 Español**
 
 Índice de la categoría **policies**. Aplican **directivas de registro a nivel de máquina** bajo `HKLM` (y, cuando aplica, el perfil de usuario por defecto) para endurecer el endpoint. Ambos son **idempotentes** y seguros de re-ejecutar.
 

@@ -1,6 +1,8 @@
-# Disk Check Scheduling
+# 💽 Disk Check Scheduling
 
 [Español abajo](#programación-de-chequeo-de-discos)
+
+**🇬🇧 English**
 
 Schedules a disk check (`chkntfs /c`) on **every** fixed disk and reboots the machine so Windows runs it.
 
@@ -61,7 +63,9 @@ None.
 
 ---
 
-# Programación de Chequeo de Discos
+# 💽 Programación de Chequeo de Discos
+
+**🇪🇸 Español**
 
 Programa un chequeo de disco (`chkntfs /c`) en **todos** los discos fijos y reinicia el equipo para dispararlo.
 

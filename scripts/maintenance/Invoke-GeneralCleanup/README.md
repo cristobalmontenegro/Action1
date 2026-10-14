@@ -1,6 +1,8 @@
-# General Cleanup (Safe)
+# 🧹 General Cleanup (Safe)
 
 [Español abajo](#limpieza-general-segura)
+
+**🇬🇧 English**
 
 Conservative cleanup: empties the temp folders of **every user** and removes broken `.lnk` shortcuts from desktops and Start menus.
 
@@ -75,7 +77,9 @@ None.
 
 ---
 
-# Limpieza General Segura
+# 🧹 Limpieza General Segura
+
+**🇪🇸 Español**
 
 Limpieza conservadora: vacía los temporales de **todos los usuarios** y elimina los accesos directos (`.lnk`) rotos de escritorios y menús de inicio.
 

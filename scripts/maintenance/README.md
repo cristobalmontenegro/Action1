@@ -1,6 +1,8 @@
-# Maintenance
+# 🔧 Maintenance
 
 [Español abajo](#mantenimiento)
+
+**🇬🇧 English**
 
 Category-level index for the **maintenance** scripts. They keep Windows endpoints clean, healthy and error-free. Two of them **force a reboot**, so read the "Security notes" section of each README before deploying them broadly.
 
@@ -15,7 +17,9 @@ Category-level index for the **maintenance** scripts. They keep Windows endpoint
 
 ---
 
-# Mantenimiento
+# 🔧 Mantenimiento
+
+**🇪🇸 Español**
 
 Índice de la categoría **maintenance**. Mantienen los endpoints Windows limpios, sanos y sin errores. **Dos de ellos fuerzan reinicio**, así que lee la sección de advertencias de cada README antes de desplegarlos de forma masiva.
 
