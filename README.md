@@ -24,8 +24,9 @@ Scripts are grouped by **category**, and each script lives in its own subfolder 
 ```
 scripts/
 └── <category>/
+    ├── README.md            # bilingual category index
     └── <Script-Name>/
-        ├── README.md            # bilingual documentation
+        ├── README.md        # bilingual documentation
         └── <Script-Name>.ps1    # ready to paste into Action1
 ```
 
