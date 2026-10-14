@@ -150,6 +150,22 @@ Sin parámetros. El script se controla con variables declaradas al inicio del ar
 
 ---
 
+---
+
+## ☕ Support me / Apóyame
+
+**EN:** If any of this was useful, you can buy me a coffee. Thanks for the support!
+
+**ES:** Si te resultó útil, puedes invitarme un café. ¡Gracias por el apoyo!
+
+<p align="center">
+  <a href="https://ko-fi.com/cristobalmontenegro" target="_blank">
+    <img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" border="0" alt="Buy Me a Coffee at ko-fi.com" />
+  </a>
+</p>
+
+---
+
 ## 👤 Author / Autoría
 
 **Cristóbal Montenegro** — https://github.com/cristobalmontenegro
