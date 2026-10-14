@@ -2,103 +2,51 @@
 
 **🇬🇧 English**
 
-A curated collection of **PowerShell** scripts for endpoint automation, maintenance and management with [Action1](https://www.action1.com/) on Windows fleets. Every script ships with its own **bilingual README** (English / Spanish) documenting what it does, its parameters, its exit codes and its risks before you run it.
+A curated collection of **14 PowerShell** scripts for endpoint automation, maintenance and management with [Action1](https://www.action1.com/) on Windows fleets. Every script ships with its own **bilingual README** (English / Spanish) documenting what it does, its parameters, its exit codes and its risks before you run it.
 
-**14 scripts · 6 categories** — hand-written for real-world IT operations: cleanup, system repair, software deployment, Windows policies, boot control and custom-attribute reporting.
-
-[Versión en Español abajo](#versión-en-español-es)
+[Versión en Español abajo](#versión-en-español)
 
 ---
 
-## 🏗️ Repository layout
+## 📦 The 14 scripts
 
-Scripts are grouped by **category**, and each script lives in its own subfolder with its own README.
-
-| Category | Purpose | Scripts |
-| :--- | :--- | :---: |
-| [**boot**](./scripts/boot) | Boot control: BCD, Safe Mode, legacy F8 menu | 2 |
-| [**chocolatey**](./scripts/chocolatey) | Software lifecycle with Chocolatey | 2 |
-| [**installers**](./scripts/installers) | Install / update specific applications | 3 |
-| [**maintenance**](./scripts/maintenance) | Cleanup, diagnostics and system repair | 4 |
-| [**policies**](./scripts/policies) | Machine-level registry policies | 2 |
-| [**reporting**](./scripts/reporting) | Custom attributes for inventory & reports | 1 |
-
-```
-scripts/
-└── <category>/
-    ├── README.md            # bilingual category index
-    └── <Script-Name>/
-        ├── README.md        # bilingual documentation
-        └── <Script-Name>.ps1    # ready to paste into Action1
-```
+| # | Script | Category | What it does | Reboots? |
+|:--:|:---|:---|:---|:--:|
+| 1 | [**Set-SafeModeBoot**](./Set-SafeModeBoot) | 🚀 Boot | Forces the next boot into **Safe Mode with networking** and reboots in 5 s. | **Yes** |
+| 2 | [**Enable-LegacyBootMenu**](./Enable-LegacyBootMenu) | 🚀 Boot | Re-enables the classic **F8 boot menu** for startup recovery options. | No |
+| 3 | [**Action-ChocolateyUpgradeAll**](./Action-ChocolateyUpgradeAll) | 🍫 Chocolatey | Silently upgrades every Chocolatey-managed package with `choco upgrade all -y`. | No |
+| 4 | [**Set-CustomAttribute-Chocolatey**](./Set-CustomAttribute-Chocolatey) | 🍫 Chocolatey | Reports whether Chocolatey is installed as the custom attribute `Chocolatey` (1/0). | No |
+| 5 | [**Install-FluentCleaner**](./Install-FluentCleaner) | 📦 Installers | Installs/updates FluentCleaner machine-wide via **WinGet** + public desktop shortcut. | No |
+| 6 | [**Install-FluentTweaker**](./Install-FluentTweaker) | 📦 Installers | Downloads and installs the latest FluentTweaker release from **GitHub** + public shortcut. | No |
+| 7 | [**Update-FirmaEC**](./Update-FirmaEC) | 📦 Installers | Updates **FirmaEC** (Ecuador's e-signature client) via its official `--update`. | No |
+| 8 | [**Invoke-GeneralCleanup**](./Invoke-GeneralCleanup) | 🔧 Maintenance | Safe cleanup: temp files for every user plus broken `.lnk` shortcuts. | No |
+| 9 | [**Invoke-DeepCleanup**](./Invoke-DeepCleanup) | 🔧 Maintenance | Deep cleanup (temp by age, WER, shader caches, recycle bin) + deferred DISM. | No |
+| 10 | [**Invoke-SystemHealthCheck**](./Invoke-SystemHealthCheck) | 🔧 Maintenance | CHKDSK + DISM `/RestoreHealth` + SFC `/scannow`, then reboot. | **Yes** |
+| 11 | [**Invoke-DiskCheck**](./Invoke-DiskCheck) | 🔧 Maintenance | Schedules `chkntfs /c` on every fixed disk and reboots. | **Yes** |
+| 12 | [**Block-MicrosoftAccounts**](./Block-MicrosoftAccounts) | 🛡️ Policies | Blocks Microsoft accounts and disables OneDrive at machine level. | No |
+| 13 | [**Disable-OOBEConsumerFeatures**](./Disable-OOBEConsumerFeatures) | 🛡️ Policies | Disables OOBE/SCOOBE and consumer suggestions for new users (idempotent). | No |
+| 14 | [**Set-CustomAttribute-LowDisk**](./Set-CustomAttribute-LowDisk) | 💾 Reporting | Flags low free space on `C:` as the custom attribute `LowDisk` (1/0, 30% threshold). | No |
 
 ---
 
-## 📦 Available scripts
+## 🗂️ The 6 categories
 
-Everything in this repository, category by category.
+| Category | Scripts | Covers |
+|:---|:--:|:---|
+| 🚀 **Boot** | 2 | Boot Configuration Data (BCD): Safe Mode, F8 legacy menu. Persistent changes — read the Security notes. |
+| 🍫 **Chocolatey** | 2 | Software lifecycle with Chocolatey: mass upgrade + a presence custom attribute. |
+| 📦 **Installers** | 3 | Install / update specific applications: FluentCleaner (WinGet), FluentTweaker (GitHub), FirmaEC. |
+| 🔧 **Maintenance** | 4 | Cleanup, diagnostics and system repair: temp files, broken `.lnk`, CHKDSK, SFC, DISM. |
+| 🛡️ **Policies** | 2 | Machine-level registry policies: block Microsoft accounts + OneDrive, disable OOBE/SCOOBE. |
+| 💾 **Reporting** | 1 | Inventory custom attributes: `LowDisk` (free-space warning). |
 
-<details>
-<summary><b>🔧 Maintenance (4)</b></summary>
+### Rollout order that usually works
 
-| Script | What it does | Reboots? |
-| :--- | :--- | :---: |
-| [**Invoke-GeneralCleanup**](./scripts/maintenance/Invoke-GeneralCleanup) | Safe cleanup: temp files for all users plus broken `.lnk` shortcuts. | No |
-| [**Invoke-DeepCleanup**](./scripts/maintenance/Invoke-DeepCleanup) | Deep cleanup (temp by age, WER, shader caches, recycle bin) + deferred DISM via a scheduled task. | No |
-| [**Invoke-SystemHealthCheck**](./scripts/maintenance/Invoke-SystemHealthCheck) | Full repair: CHKDSK + DISM `/RestoreHealth` + SFC `/scannow`, then reboot. | **Yes** |
-| [**Invoke-DiskCheck**](./scripts/maintenance/Invoke-DiskCheck) | Schedules `chkntfs /c` on every fixed disk and reboots to run it. | **Yes** |
-
-</details>
-
-<details>
-<summary><b>⚙️ Chocolatey (2)</b></summary>
-
-| Script | What it does | Reboots? |
-| :--- | :--- | :---: |
-| [**Action-ChocolateyUpgradeAll**](./scripts/chocolatey/Action-ChocolateyUpgradeAll) | Silently upgrades every Chocolatey-managed package (`choco upgrade all -y`). | No |
-| [**Set-CustomAttribute-Chocolatey**](./scripts/chocolatey/Set-CustomAttribute-Chocolatey) | Reports whether Chocolatey is installed as the custom attribute `Chocolatey` (1/0). | No |
-
-</details>
-
-<details>
-<summary><b>📦 Installers (3)</b></summary>
-
-| Script | What it does | Reboots? |
-| :--- | :--- | :---: |
-| [**Install-FluentCleaner**](./scripts/installers/Install-FluentCleaner) | Installs/updates FluentCleaner machine-wide via WinGet, fixes permissions and creates a public shortcut. | No |
-| [**Install-FluentTweaker**](./scripts/installers/Install-FluentTweaker) | Downloads and installs the latest FluentTweaker release from GitHub, fixes permissions and creates a public shortcut. | No |
-| [**Update-FirmaEC**](./scripts/installers/Update-FirmaEC) | Updates FirmaEC (Ecuador's e-signature client) through its official `--update` if installed. | No |
-
-</details>
-
-<details>
-<summary><b>🛡️ Policies (2)</b></summary>
-
-| Script | What it does | Reboots? |
-| :--- | :--- | :---: |
-| [**Block-MicrosoftAccounts**](./scripts/policies/Block-MicrosoftAccounts) | Blocks Microsoft accounts and disables OneDrive at machine level. | No |
-| [**Disable-OOBEConsumerFeatures**](./scripts/policies/Disable-OOBEConsumerFeatures) | Disables OOBE/SCOOBE and consumer suggestions for new users (idempotent). | No |
-
-</details>
-
-<details>
-<summary><b>🚀 Boot (2)</b></summary>
-
-| Script | What it does | Reboots? |
-| :--- | :--- | :---: |
-| [**Enable-LegacyBootMenu**](./scripts/boot/Enable-LegacyBootMenu) | Re-enables the classic F8 boot menu. | No |
-| [**Set-SafeModeBoot**](./scripts/boot/Set-SafeModeBoot) | Boots into Safe Mode with networking (persistent) and reboots. | **Yes** |
-
-</details>
-
-<details>
-<summary><b>📊 Reporting (1)</b></summary>
-
-| Script | What it does | Reboots? |
-| :--- | :--- | :---: |
-| [**Set-CustomAttribute-LowDisk**](./scripts/reporting/Set-CustomAttribute-LowDisk) | Flags low free space on `C:` as the custom attribute `LowDisk` (1/0, 30% threshold). | No |
-
-</details>
+- **🍫 Chocolatey weekly:** `Action-ChocolateyUpgradeAll` (mass upgrade) + `Set-CustomAttribute-Chocolatey` (to know who has it).
+- **🔧 Maintenance weekly:** `Invoke-GeneralCleanup` (safe, non-destructive).
+- **🔧 Maintenance monthly:** `Invoke-DeepCleanup` (aggressive, parametrised).
+- **🚀 Boot, 🛡️ Policies, 📦 Installers:** one-off baseline + as needed.
+- **🛠️ On demand:** `Invoke-DiskCheck` and `Invoke-SystemHealthCheck` for the endpoints that actually need them.
 
 ---
 
@@ -118,7 +66,7 @@ Everything in this repository, category by category.
 1. Open the Action1 console → **Scripts** (or the *Runbook* you want to use it in).
 2. Create a new **PowerShell** script.
 3. Paste the contents of `<Script-Name>.ps1` into the editor.
-4. Read the **Warnings** section of the script's README (reboots, BCD changes, data deletion).
+4. Read the **Security notes** section of the script's README (reboots, BCD changes, data deletion).
 5. Test on a **single endpoint** before rolling it out through a policy.
 6. For recurring runs, attach it to a policy with *Intelligent Run* (only runs when the machine is out of compliance) or a fixed schedule.
 
@@ -178,100 +126,49 @@ This project is licensed under the MIT License — see the [`LICENSE`](./LICENSE
 
 **🇪🇸 Español**
 
-Una colección curada de scripts **PowerShell** para automatización, mantenimiento y gestión de endpoints con [Action1](https://www.action1.com/) en flotas Windows. Cada script incluye su propio **README bilingüe** (inglés / español) que documenta qué hace, sus parámetros, sus códigos de salida y sus riesgos antes de ejecutarlo.
-
-**14 scripts · 6 categorías** — escritos a mano para operación de TI real: limpieza, reparación del sistema, despliegue de software, políticas de Windows, control de arranque y atributos personalizados para reportes.
+Una colección curada de **14 scripts PowerShell** para automatización, mantenimiento y gestión de endpoints con [Action1](https://www.action1.com/) en flotas Windows. Cada script incluye su propio **README bilingüe** (inglés / español) que documenta qué hace, sus parámetros, sus códigos de salida y sus riesgos antes de ejecutarlo.
 
 ---
 
-## 🏗️ Estructura del repositorio
+## 📦 Los 14 scripts
 
-Los scripts se agrupan por **categoría**, y cada script vive en su propia subcarpeta con su propio README.
-
-| Categoría | Propósito | Scripts |
-| :--- | :--- | :---: |
-| [**boot**](./scripts/boot) | Control de arranque: BCD, Modo Seguro, menú F8 heredado | 2 |
-| [**chocolatey**](./scripts/chocolatey) | Ciclo de vida de software con Chocolatey | 2 |
-| [**installers**](./scripts/installers) | Instalación / actualización de aplicaciones concretas | 3 |
-| [**maintenance**](./scripts/maintenance) | Limpieza, diagnóstico y reparación del sistema | 4 |
-| [**policies**](./scripts/policies) | Directivas de registro a nivel de máquina | 2 |
-| [**reporting**](./scripts/reporting) | Atributos personalizados para inventario y reportes | 1 |
-
-```
-scripts/
-└── <categoría>/
-    └── <Nombre-Script>/
-        ├── README.md            # documentación bilingüe
-        └── <Nombre-Script>.ps1  # listo para pegar en Action1
-```
+| # | Script | Categoría | Qué hace | ¿Reinicia? |
+|:-:|:---|:---|:---|:-:|
+| 1 | [**Set-SafeModeBoot**](./Set-SafeModeBoot) | 🚀 Arranque | Fuerza el siguiente arranque en **Modo Seguro con red** y reinicia en 5 s. | **Sí** |
+| 2 | [**Enable-LegacyBootMenu**](./Enable-LegacyBootMenu) | 🚀 Arranque | Reactiva el **menú F8 clásico** para acceder a opciones de recuperación al arrancar. | No |
+| 3 | [**Action-ChocolateyUpgradeAll**](./Action-ChocolateyUpgradeAll) | 🍫 Chocolatey | Actualiza en silencio todos los paquetes gestionados con `choco upgrade all -y`. | No |
+| 4 | [**Set-CustomAttribute-Chocolatey**](./Set-CustomAttribute-Chocolatey) | 🍫 Chocolatey | Reporta si Chocolatey está instalado como atributo personalizado `Chocolatey` (1/0). | No |
+| 5 | [**Install-FluentCleaner**](./Install-FluentCleaner) | 📦 Instaladores | Instala/actualiza FluentCleaner para toda la máquina vía **WinGet** + acceso directo público. | No |
+| 6 | [**Install-FluentTweaker**](./Install-FluentTweaker) | 📦 Instaladores | Descarga e instala el último release de FluentTweaker desde **GitHub** + acceso directo público. | No |
+| 7 | [**Update-FirmaEC**](./Update-FirmaEC) | 📦 Instaladores | Actualiza **FirmaEC** (firmador electrónico de Ecuador) con su `--update` oficial. | No |
+| 8 | [**Invoke-GeneralCleanup**](./Invoke-GeneralCleanup) | 🔧 Mantenimiento | Limpieza segura: temporales de todos los usuarios y `.lnk` rotos. | No |
+| 9 | [**Invoke-DeepCleanup**](./Invoke-DeepCleanup) | 🔧 Mantenimiento | Limpieza profunda (temp por antigüedad, WER, cachés de shaders, papelera) + DISM diferido. | No |
+| 10 | [**Invoke-SystemHealthCheck**](./Invoke-SystemHealthCheck) | 🔧 Mantenimiento | CHKDSK + DISM `/RestoreHealth` + SFC `/scannow`, y reinicia. | **Sí** |
+| 11 | [**Invoke-DiskCheck**](./Invoke-DiskCheck) | 🔧 Mantenimiento | Programa `chkntfs /c` en todos los discos fijos y reinicia. | **Sí** |
+| 12 | [**Block-MicrosoftAccounts**](./Block-MicrosoftAccounts) | 🛡️ Políticas | Bloquea cuentas Microsoft y desactiva OneDrive a nivel de máquina. | No |
+| 13 | [**Disable-OOBEConsumerFeatures**](./Disable-OOBEConsumerFeatures) | 🛡️ Políticas | Desactiva OOBE/SCOOBE y las sugerencias de contenido para usuarios nuevos (idempotente). | No |
+| 14 | [**Set-CustomAttribute-LowDisk**](./Set-CustomAttribute-LowDisk) | 💾 Reportes | Marca el poco espacio libre en `C:` como atributo personalizado `LowDisk` (1/0, umbral 30%). | No |
 
 ---
 
-## 📦 Scripts disponibles
+## 🗂️ Las 6 categorías
 
-Todo lo que hay en este repositorio, categoría por categoría.
+| Categoría | Scripts | Qué cubre |
+|:---|:--:|:---|
+| 🚀 **Arranque** | 2 | BCD (Boot Configuration Data): Modo Seguro, menú F8 heredado. Cambios persistentes — lee las advertencias de seguridad. |
+| 🍫 **Chocolatey** | 2 | Ciclo de vida de software con Chocolatey: actualización masiva + atributo de presencia. |
+| 📦 **Instaladores** | 3 | Instalación / actualización de aplicaciones concretas: FluentCleaner (WinGet), FluentTweaker (GitHub), FirmaEC. |
+| 🔧 **Mantenimiento** | 4 | Limpieza, diagnóstico y reparación del sistema: temporales, `.lnk` rotos, CHKDSK, SFC, DISM. |
+| 🛡️ **Políticas** | 2 | Directivas de registro a nivel de máquina: bloqueo de cuentas Microsoft + OneDrive, desactivación de OOBE/SCOOBE. |
+| 💾 **Reportes** | 1 | Atributos personalizados de inventario: `LowDisk` (aviso de poco espacio). |
 
-<details>
-<summary><b>🔧 Mantenimiento (4)</b></summary>
+### Orden de despliegue habitual
 
-| Script | Qué hace | ¿Reinicia? |
-| :--- | :--- | :---: |
-| [**Invoke-GeneralCleanup**](./scripts/maintenance/Invoke-GeneralCleanup) | Limpieza segura: temporales de todos los usuarios y accesos directos `.lnk` rotos. | No |
-| [**Invoke-DeepCleanup**](./scripts/maintenance/Invoke-DeepCleanup) | Limpieza profunda (temp por antigüedad, WER, cachés de shaders, papelera) + DISM diferido por tarea programada. | No |
-| [**Invoke-SystemHealthCheck**](./scripts/maintenance/Invoke-SystemHealthCheck) | Reparación integral: CHKDSK + DISM `/RestoreHealth` + SFC `/scannow`, y reinicia. | **Sí** |
-| [**Invoke-DiskCheck**](./scripts/maintenance/Invoke-DiskCheck) | Programa `chkntfs /c` en todos los discos fijos y reinicia para ejecutarlo. | **Sí** |
-
-</details>
-
-<details>
-<summary><b>⚙️ Chocolatey (2)</b></summary>
-
-| Script | Qué hace | ¿Reinicia? |
-| :--- | :--- | :---: |
-| [**Action-ChocolateyUpgradeAll**](./scripts/chocolatey/Action-ChocolateyUpgradeAll) | Actualiza en silencio todos los paquetes gestionados por Chocolatey (`choco upgrade all -y`). | No |
-| [**Set-CustomAttribute-Chocolatey**](./scripts/chocolatey/Set-CustomAttribute-Chocolatey) | Reporta si Chocolatey está instalado como atributo personalizado `Chocolatey` (1/0). | No |
-
-</details>
-
-<details>
-<summary><b>📦 Instaladores (3)</b></summary>
-
-| Script | Qué hace | ¿Reinicia? |
-| :--- | :--- | :---: |
-| [**Install-FluentCleaner**](./scripts/installers/Install-FluentCleaner) | Instala/actualiza FluentCleaner para toda la máquina vía WinGet, corrige permisos y crea acceso directo público. | No |
-| [**Install-FluentTweaker**](./scripts/installers/Install-FluentTweaker) | Descarga e instala el último release de FluentTweaker desde GitHub, corrige permisos y crea acceso directo público. | No |
-| [**Update-FirmaEC**](./scripts/installers/Update-FirmaEC) | Actualiza FirmaEC (firmador electrónico de Ecuador) con su `--update` oficial si está instalado. | No |
-
-</details>
-
-<details>
-<summary><b>🛡️ Políticas (2)</b></summary>
-
-| Script | Qué hace | ¿Reinicia? |
-| :--- | :--- | :---: |
-| [**Block-MicrosoftAccounts**](./scripts/policies/Block-MicrosoftAccounts) | Bloquea cuentas Microsoft y desactiva OneDrive a nivel de máquina. | No |
-| [**Disable-OOBEConsumerFeatures**](./scripts/policies/Disable-OOBEConsumerFeatures) | Desactiva OOBE/SCOOBE y las sugerencias de contenido para usuarios nuevos (idempotente). | No |
-
-</details>
-
-<details>
-<summary><b>🚀 Arranque (2)</b></summary>
-
-| Script | Qué hace | ¿Reinicia? |
-| :--- | :--- | :---: |
-| [**Enable-LegacyBootMenu**](./scripts/boot/Enable-LegacyBootMenu) | Reactiva el menú de arranque clásico (tecla F8). | No |
-| [**Set-SafeModeBoot**](./scripts/boot/Set-SafeModeBoot) | Arranca en Modo Seguro con red (persistente) y reinicia. | **Sí** |
-
-</details>
-
-<details>
-<summary><b>📊 Reportería (1)</b></summary>
-
-| Script | Qué hace | ¿Reinicia? |
-| :--- | :--- | :---: |
-| [**Set-CustomAttribute-LowDisk**](./scripts/reporting/Set-CustomAttribute-LowDisk) | Marca el poco espacio libre en `C:` como atributo personalizado `LowDisk` (1/0, umbral 30%). | No |
-
-</details>
+- **🍫 Chocolatey semanal:** `Action-ChocolateyUpgradeAll` (actualización masiva) + `Set-CustomAttribute-Chocolatey` (para saber quién lo tiene).
+- **🔧 Mantenimiento semanal:** `Invoke-GeneralCleanup` (seguro, no destructivo).
+- **🔧 Mantenimiento mensual:** `Invoke-DeepCleanup` (agresivo, parametrizable).
+- **🚀 Arranque, 🛡️ Políticas, 📦 Instaladores:** línea base única + según necesidad.
+- **🛠️ Bajo demanda:** `Invoke-DiskCheck` e `Invoke-SystemHealthCheck` solo para los equipos que realmente lo necesitan.
 
 ---
 
